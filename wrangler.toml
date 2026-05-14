@@ -1,0 +1,19 @@
+#:schema node_modules/wrangler/config-schema.json
+
+name = "obsidian-foxgate"
+main = "src/index.ts"
+compatibility_date = "2024-12-20"
+
+# Custom domain: foxgate.omnitopia.space
+# Configure this in Cloudflare Dashboard → Workers → foxgate → Triggers → Custom Domains
+
+# Environment variables (non-secret)
+# Set these via: npx wrangler secret put <KEY>
+# Required secrets:
+#   GITHUB_TOKEN    - GitHub Personal Access Token (repo scope)
+#   GITHUB_OWNER    - GitHub username
+#   GITHUB_REPO     - Repository name
+#   FOXGATE_TOKEN   - Bearer token for MCP authentication
+
+[vars]
+GITHUB_BRANCH = "main"
